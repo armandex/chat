@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+	section.mod-home
+		.container
+			h1= title
+			p Welcome to #{title}
+
+			div.notificaciones
+				h2 Notificaciones
+				div
+					label Contactos
+					button.add-contact Agregar
+					button.clear-contacts Limpiar
+				div
+					label Mensajes
+					button.add-message Agregar
+					button.clear-messages Limpiar
+				div
+					label Notificaciones
+					button.add-notifycation Agregar
+					button.clear-notifycations Limpiar

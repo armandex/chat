@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font: 14px 'Open Sans', sans-serif;
+  font-weight: 300;
+  padding-top: 50px;
+}
+a {
+  color: #00b7ff;
+}
+.badge {
+  background-color: #0f0f0f;
+  color: #fff;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+.navbar-radioshack {
+  background-color: #ed1c24;
+  border-color: #ce0b14;
+}
+.navbar-radioshack .navbar-brand {
+  color: #fff;
+  font-weight: 600;
+}
+.navbar-radioshack .navbar-brand:hover,
+.navbar-radioshack .navbar-brand:focus {
+  text-shadow: 0 0 3px rgba(255,255,255,0.6);
+}
+.navbar-radioshack .navbar-nav > li > a {
+  color: #fff;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.navbar-radioshack .navbar-nav > li > a:hover,
+.navbar-radioshack .navbar-nav > li > a:focus {
+  background-color: #f6424b;
+  color: #fff;
+}
+.navbar-radioshack input.form-control {
+  width: 300px;
+}
+.layout-left {
+  background-color: #3c3939;
+  color: #fff;
+  width: 215px;
+}
+.layout-left .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.layout-left .menu a {
+  display: block;
+  padding: 2px 5px;
+}

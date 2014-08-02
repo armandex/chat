@@ -1,0 +1,62 @@
+/*
+	Funciones
+*/
+img_dir = "../img/"
+
+flexbox(orient, pack, align)
+
+	display -webkit-box
+	-webkit-box-orient  orient
+	-webkit-box-pack  pack
+	-webkit-box-align  align
+
+	display -moz-box
+	-moz-box-orient  orient
+	-moz-box-pack  pack
+	-moz-box-align  align
+
+	display -ms-flexbox
+	-ms-flex-orient  orient
+	-ms-flex-pack  pack
+	-ms-flex-align  align
+
+	display box
+	box-orient orient
+	box-pack pack
+	box-align align
+	
+box_flex(num)
+	-webkit-box-flex num
+	-moz-box-flex num
+	-ms-box-flex num
+	box-flex num
+
+transition(args)
+	-webkit-transition: args; /* Safari */
+	transition: args;
+
+transform(args)
+	-ms-transform args
+	-o-transform args
+	-moz-transform args
+	-webkit-transform args
+	transform args
+
+// background 
+back(image, _repeat, position, color)
+
+	if(_repeat == "nr")
+		__repeat = no-repeat
+	else if (_repeat == "rx")
+		__repeat = repeat-x
+	else if (_repeat == "ry")
+		__repeat = repeat-y
+	else if (_repeat == "repeat")
+		__repeat = repeat
+
+	background url(img_dir + image) scroll position __repeat color
+
+back_cover(image, repeat, position, color)
+
+	back(image, repeat, position, color)
+	background-size cover
