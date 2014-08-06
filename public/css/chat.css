@@ -6,6 +6,15 @@
   position: fixed;
   width: 250px;
 }
+#chat-interface.closed .chat-users-list {
+  display: none;
+}
+#chat-interface.closed .chat-footer .show-chat-list {
+  display: block;
+}
+#chat-interface.closed .chat-footer .hide-chat-list {
+  display: none;
+}
 #chat-interface .chat-users-list {
   border-top: 1px solid #ccc;
 }
@@ -96,12 +105,21 @@
   height: 32px;
   width: 35px;
 }
-#chat-interface.closed .chat-users-list {
-  display: none;
+.chats-container {
+  bottom: 3px;
+  height: calc(48px + 12px);
+  position: fixed;
+  right: 280px;
+  text-align: right;
 }
-#chat-interface.closed .chat-footer .show-chat-list {
-  display: block;
+.chats-container .chat-bubble {
+  border: 2px solid #999;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+  float: right;
+  margin: 5px;
+  overflow: hidden;
 }
-#chat-interface.closed .chat-footer .hide-chat-list {
-  display: none;
+.chats-container .chat-bubble img {
+  width: 48px;
 }

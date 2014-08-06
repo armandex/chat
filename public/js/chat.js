@@ -41,9 +41,9 @@
     $.Chat.create_interface = function(){
 
         $("body").append('<div id="chat-interface" class="closed" />');
-        
-        $("body").append('<div class="chat-windows" />');
-        
+
+        $("body").append('<div class="chats-container" />');
+
         $("#chat-interface").append('<div class="chat-users-list"><ul class="ul-contactos" /></div>');
         $("#chat-interface").append('<div class="chat-footer" />');
 
@@ -71,9 +71,10 @@
                         '<span class="chat-status status-off"><i class="fa fa-circle"></i></span>' +
                         '<span class="chat-user-name" data-entry="' + contacto.entry + '">' + contacto.nombres + " " + contacto.apellidos + '</span>' +
                     '</li>');
-        
+
         html.on("click", function(e){
-            console.log(contacto);
+            //console.log(contacto);
+            $.Chat.create_chat_window(contacto);
         });
 
         $(".ul-contactos").append(html);
@@ -86,10 +87,18 @@
         $("#chat-interface .status").addClass(status);
 
     };
-    
+
     $.Chat.create_chat_window = function(contacto){
         var chat_window = $('<div class="chat-window" data-entry="' + contacto.entry + '" />');
-        
-        
+
+        var chat_bubble = $('<div class="chat-bubble" />');
+
+        if(!contacto.avatar){
+            contacto.avatar = "no-avatar.png";
+        }
+
+        chat_bubble.append('<img src="uploads/avatars/' + contacto.avatar + '" />');
+
+        $(".chats-container").append(chat_bubble);
     };
 }(jQuery, window));
