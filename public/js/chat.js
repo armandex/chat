@@ -24,7 +24,7 @@
 
         socket.on("S2C_SOCKET_CREATED", function(){
 
-            $.create_chat_interface();
+            $.Chat.create_interface();
 
             //$().
 
@@ -32,16 +32,18 @@
 
             socket.on("S2C_CONTACT_LIST", function(contactos){
                 for(var i = 0; i < contactos.length; i++){
-                    $.create_contacto(contactos[i]);
+                    $.Chat.create_contacto(contactos[i]);
                 }
             });
         });
     };
 
-    $.create_chat_interface = function(){
+    $.Chat.create_interface = function(){
 
         $("body").append('<div id="chat-interface" class="closed" />');
-
+        
+        $("body").append('<div class="chat-windows" />');
+        
         $("#chat-interface").append('<div class="chat-users-list"><ul class="ul-contactos" /></div>');
         $("#chat-interface").append('<div class="chat-footer" />');
 
@@ -58,7 +60,7 @@
         });
     };
 
-    $.create_contacto = function(contacto){
+    $.Chat.create_contacto = function(contacto){
 
         if(!contacto.avatar){
             contacto.avatar = "no-avatar.png";
@@ -69,6 +71,10 @@
                         '<span class="chat-status status-off"><i class="fa fa-circle"></i></span>' +
                         '<span class="chat-user-name" data-entry="' + contacto.entry + '">' + contacto.nombres + " " + contacto.apellidos + '</span>' +
                     '</li>');
+        
+        html.on("click", function(e){
+            console.log(contacto);
+        });
 
         $(".ul-contactos").append(html);
     };
@@ -79,5 +85,11 @@
 
         $("#chat-interface .status").addClass(status);
 
+    };
+    
+    $.Chat.create_chat_window = function(contacto){
+        var chat_window = $('<div class="chat-window" data-entry="' + contacto.entry + '" />');
+        
+        
     };
 }(jQuery, window));
