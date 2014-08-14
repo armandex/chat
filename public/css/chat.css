@@ -115,10 +115,20 @@
 .chats-container .chat-bubble {
   border: 2px solid #999;
   border-radius: 26px;
+<<<<<<< HEAD
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
+=======
+>>>>>>> d67b83096d1e35911250c3416d5495122fec0509
   float: right;
   margin: 5px;
   overflow: hidden;
+  -webkit-transition: all 0.2s;
+/* Safari */
+  transition: all 0.2s;
+}
+.chats-container .chat-bubble:hover {
+  border-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
 }
 .chats-container .chat-bubble img {
   width: 48px;
