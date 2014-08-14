@@ -3,8 +3,8 @@ module.exports = function(server){
 
 	var io = require('socket.io').listen(server);
 
-	//require("./controllers/chat")(io);
-	io.sockets.on("connection", function(socket){
+	require("./controllers/chat")(io);
+	/*io.sockets.on("connection", function(socket){
 
 		socket.emit("S2C_SOCKET_CREATED", true);
 
@@ -18,6 +18,6 @@ module.exports = function(server){
 
 			socket.emit("S2C_CONTACT_LIST", contactos);
 		});
-	});
+	});*/
 
 };
